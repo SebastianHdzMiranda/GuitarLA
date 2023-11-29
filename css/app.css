@@ -12,13 +12,16 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-family: var(--fuente-principal);
     line-height: 1.5;
     /* overflow-y: scroll; */
 }
 img {
     max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 a {
@@ -38,6 +41,23 @@ ul {
     width: 95%;
     margin: 0 auto;
 }
+
+/* utilidades */
+.boton {
+    color: var(--negro);
+    border: 2px solid var(--primary);
+    padding: 1rem 5rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: all .3s ease;
+}
+.boton:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+
 
 /* Header
 ------------------------------------------------------ */
@@ -147,9 +167,16 @@ ul {
 .modelo__descripcion {
     font-size: 2rem;
 }
+@media (min-width: 768px) {
+    .modelo__descripcion {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+}
 @media (min-width: 1024px) {
     .modelo__descripcion {
         max-width: 50%;
+        margin: unset;
     }
 }
 .modelo__precio {
@@ -159,14 +186,121 @@ ul {
     margin: 0 0 2rem 0;
 }
 .modelo__enlace {
-    border: 2px solid var(--primary);
-    padding: 1rem 5rem;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 700;
-    transition: background-color .3s ease;
-}
-.modelo__enlace:hover {
-    background-color: var(--primary);
+    color: var(--blanco);
 }
 
+
+/* Main - Productos
+----------------------------------------------------- */
+.productos {
+    margin-block: 5rem;
+}
+.productos__heading {
+    text-align: center;
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 5rem;
+}
+@media (min-width: 768px) {
+    .productos__contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }    
+}
+@media (min-width: 1024px) {
+    .productos__contenedor {
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}
+.producto {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .producto {
+        margin-bottom: 0;
+    }  
+}
+.producto__heading {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+.producto__texto {
+    font-size: 1.6rem;
+}
+.producto__precio {
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0 0 2rem 0;
+}
+.producto__enlace {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    font-weight: 900;
+}
+
+/* Cursos
+----------------------------------------------------- */
+.cursos {
+    margin-block: 10rem;
+    padding-block: 10rem;
+    background-image: linear-gradient(to right, rgb(0 0 0 / .6) 0%, rgb( 0 0 0 / .6) 100%), url(../img/cursos_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cursos__contenedor {
+    
+}
+@media (min-width: 1024px) {
+    .cursos__contenedor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.cursos__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 1024px) {
+    .cursos__contenido {
+        grid-column: 2/3;
+    }
+} 
+.cursos__heading {
+    color: var(--primary);
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .cursos__heading {
+        font-size: 4.4rem;
+    }   
+}
+.cursos__texto {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--blanco);
+    margin-bottom: 4rem;
+    line-height: 1.5;
+}
+@media (min-width: 768px) {
+    .cursos__texto {
+        font-size: 2.4rem;
+    }  
+}
+.cursos__enlace {
+    color: var(--blanco);
+}
