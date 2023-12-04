@@ -35,18 +35,23 @@ ul {
     padding: 0;
 }
 
-/* Selecciona a los que terminan con 'contenedor' */
-[class$="__contenedor"] {
+/* utilidades */
+[class*="contenedor"] {
     max-width: 120rem;
     width: 95%;
     margin: 0 auto;
 }
-
-/* utilidades */
+[class*="heading"] {
+    font-size: 4rem;
+    color: var(--primary);
+    text-align: center;
+    font-weight: 900;
+    margin: 5rem 0;
+}
 .boton {
     color: var(--negro);
     border: 2px solid var(--primary);
-    padding: 1rem 5rem;
+    padding: 1rem 0;
     text-transform: uppercase;
     font-size: 1.4rem;
     font-weight: 700;
@@ -164,9 +169,6 @@ ul {
 .modelo__nombre {
     font-size: 8rem;
 }
-.modelo__descripcion {
-    font-size: 2rem;
-}
 @media (min-width: 768px) {
     .modelo__descripcion {
         max-width: 85%;
@@ -176,7 +178,7 @@ ul {
 @media (min-width: 1024px) {
     .modelo__descripcion {
         max-width: 50%;
-        margin: unset;
+        margin: 0 0 1.5rem 0;
     }
 }
 .modelo__precio {
@@ -187,6 +189,7 @@ ul {
 }
 .modelo__enlace {
     color: var(--blanco);
+    padding-inline: 5rem;
 }
 
 
@@ -195,22 +198,15 @@ ul {
 .productos {
     margin-block: 5rem;
 }
-.productos__heading {
-    text-align: center;
-    font-weight: 900;
-    font-size: 4rem;
-    color: var(--primary);
-    margin-bottom: 5rem;
-}
 @media (min-width: 768px) {
-    .productos__contenedor {
+    .productos__grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
     }    
 }
 @media (min-width: 1024px) {
-    .productos__contenedor {
+    .productos__grid {
         grid-template-columns: repeat(3, 1fr);
     }    
 }
@@ -227,7 +223,7 @@ ul {
         margin-bottom: 0;
     }  
 }
-.producto__heading {
+.producto__nombre {
     text-transform: uppercase;
     font-size: 3rem;
 }
@@ -251,21 +247,18 @@ ul {
 /* Cursos
 ----------------------------------------------------- */
 .cursos {
-    margin-block: 10rem;
-    padding-block: 10rem;
     background-image: linear-gradient(to right, rgb(0 0 0 / .6) 0%, rgb( 0 0 0 / .6) 100%), url(../img/cursos_bg.jpg);
-    background-repeat: no-repeat;
+    padding-block: 10rem;
+    margin-top: 10rem;
     background-size: cover;
     background-position: center;
-}
-
-.cursos__contenedor {
-    
+    background-repeat: no-repeat;
 }
 @media (min-width: 1024px) {
-    .cursos__contenedor {
+    .cursos__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
     }
 }
 .cursos__contenido {
@@ -278,23 +271,10 @@ ul {
         grid-column: 2/3;
     }
 } 
-.cursos__heading {
-    color: var(--primary);
-    font-size: 4rem;
-    font-weight: 900;
-    text-align: center;
-}
-@media (min-width: 768px) {
-    .cursos__heading {
-        font-size: 4.4rem;
-    }   
-}
 .cursos__texto {
-    text-align: center;
-    font-size: 2rem;
     color: var(--blanco);
+    text-align: center;
     margin-bottom: 4rem;
-    line-height: 1.5;
 }
 @media (min-width: 768px) {
     .cursos__texto {
@@ -303,4 +283,166 @@ ul {
 }
 .cursos__enlace {
     color: var(--blanco);
+    padding-inline: 5rem;
+}
+
+/* Blog
+-------------------------------------------------------- */
+
+.blog__grid {
+    display: grid;
+    gap: 6rem;
+}
+@media (min-width: 768px) {
+    .blog__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+@media (min-width: 1024px) {
+    .blog__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .blog__grid--page {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+}
+.entrada__contenido {
+    padding-inline: 2rem;
+}
+.entrada__nombre {
+    font-weight: 400;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+.entrada__date {
+    color: var(--primary);
+    font-size: 1.6rem;
+}
+.entrada__texto {
+    font-size: 1.6rem;
+}
+.entrada__enlace {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+/* Footer
+---------------------------------------------------------- */
+.footer {
+    background-color: var(--negro);
+    padding-block: 5rem;
+    margin-top: 8rem;
+}
+@media (min-width: 768px) {
+    .footer {
+        padding-block: 8rem;
+    }
+}
+.footer__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+@media (min-width: 768px) {
+    .footer__contenido {
+        flex-direction: row;
+    }
+}
+.navegacion__list--footer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .navegacion__list--footer {
+        flex-direction: row;
+    }
+}
+.navegacion__enlace--footer {
+    font-size: 2rem;
+    text-transform: lowercase;
+}
+@media (min-width: 768px) {
+    .navegacion__enlace--footer {
+        font-size: 2.5rem;
+    }
+}
+.footer__copyright {
+    color: var(--blanco);
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .footer__copyright {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* Nosotros
+-------------------------------------------------------- */
+.nosotros__grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+
+}
+
+@media (min-width: 768px) {
+    .nosotros__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+.nosotros__contenido {
+    padding-inline: 1rem;
+}
+
+/* Producto
+----------------------------------------------------- */
+.producto__grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    gap: 1rem;
+}
+.producto__select {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-block: 1rem;
+    border: 2px solid var(--primary);
+}
+.producto__submit {
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+    padding-block: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background-color: var(--primary);
+    color: var(--blanco);
+    border: none;
+    transition: background-color .3s ease-in;
+}
+.producto__submit:hover {
+    background-color: var(--negro);
+    cursor: pointer;
+}
+
+/* Entrada
+------------------------------------------------------ */
+.entrada {
+    max-width: 80rem;
+    margin: 0 auto;
 }
