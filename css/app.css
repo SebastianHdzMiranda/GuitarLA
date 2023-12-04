@@ -322,6 +322,11 @@ ul {
 }
 .entrada__texto {
     font-size: 1.6rem;
+    /* Codigo para tener una extension maxima de 4 lineas */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
 }
 .entrada__enlace {
     display: block;
