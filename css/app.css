@@ -409,11 +409,27 @@ ul {
 
 /* Producto
 ----------------------------------------------------- */
+.producto__imagen--page {
+    width: 20rem;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .producto__imagen--page {
+        width: unset;
+        margin: unset;
+    }
+}
 .producto__grid {
     display: grid;
-    grid-template-columns: 2fr 3fr;
     align-items: center;
     gap: 1rem;
+}
+@media (min-width: 768px) {
+    .producto__grid {
+        grid-template-columns: 2fr 3fr;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 .producto__select {
     display: block;
